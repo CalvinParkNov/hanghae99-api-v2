@@ -1,11 +1,9 @@
 const express = require("express");
 const app = express();
 require("dotenv").config({});
+const boardRouter = require("./routes/board");
 //root for main page
-app.get("/", (req, res) => {
-  res.send("welcome to this blah blah blah calvin");
-});
-
+app.get("/", boardRouter);
 const port = process.env.PORT || 5000;
 
 const start = async () => {
